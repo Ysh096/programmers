@@ -1,6 +1,9 @@
 def solution(participant, completion):
-    participant.sort()
-    completion.sort()
+    A = sorted(participant)
+    B = sorted(completion)
     for i in range(len(participant)):
-        if participant[i] != completion[i]:
-            return participant[i]
+        try:
+            if A[i] != B[i]:
+                return A[i]
+        except: #A[end]의 경우
+            return A[i]

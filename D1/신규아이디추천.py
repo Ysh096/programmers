@@ -21,17 +21,18 @@ def solution(new_id):
             count = 0           #count를 0으로 돌리고
             new_id_3 += cha     #문자를 더함
     #3단계 완료
-    if new_id_3[0] == '.':
-        new_id_4 = new_id_3[1:]
+    if new_id_3[0] == '.': #처음 문자가 .이면
+        new_id_4 = new_id_3[1:] #슬라이싱
         try:
-            if new_id_4[-1] == '.':
-                new_id_4 = new_id_4[:-1]
-        except IndexError: #빈 칸인 경우
+            if new_id_4[-1] == '.': #처음 문자가 .인 경우 -> 마지막 문자가 .이면
+                new_id_4 = new_id_4[:-1] #또 슬라이싱
+        except IndexError: #현재 new_id_4가 비어있는 경우
             pass
-    elif new_id_3[-1] == '.':
-        new_id_4 = new_id_3[:-1]
+    elif new_id_3[-1] == '.': #마지막 문자가 .이면
+        new_id_4 = new_id_3[:-1] #슬라이싱
     else:
-        new_id_4 = new_id_3
+        new_id_4 = new_id_3 #.이 없으면
+    # new_id_4 = new_id_3.strip('.') #쉽게 할 수 있었음..
     #4단계 완료
     
     if new_id_4 == "":
